@@ -4,6 +4,12 @@ I'm not waiting 7 days to use a product I pay for. I have been a patron member a
 
 Really weird hill to die on. The way you treated me is shitty at best. I've held my tongue on most of your other behaviors but this was my last straw.
 
+This Repository shall remain public until my paid subscription is restored. Additionally I will be including more games to this list as time goes on. 
+
+Issues are closed, There is a tutorial below on how to utilize the sdks.  
+
+These are for INTERNAL use.  
+
 # "Open a Ticket"
 ![image](https://user-images.githubusercontent.com/80198020/197829417-ae70ee70-328b-42d2-a7a1-b6d2a715b078.png)
 
