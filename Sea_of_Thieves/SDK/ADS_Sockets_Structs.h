@@ -1,0 +1,32 @@
+﻿#pragma once
+
+/**
+ * Name: Sea_of_Thieves
+ * Version: 9505844
+ */
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x01)
+#endif
+
+namespace CG
+{
+	// --------------------------------------------------
+	// # Structs
+	// --------------------------------------------------
+	/**
+	 * AnimDataEntryStruct ADS_Sockets.ADS_Sockets
+	 * Size -> 0x0002
+	 */
+	struct FADS_Sockets
+	{
+	public:
+		unsigned char                                              ControllableHandSocketGroup_4_E2B44462485C20DD896BBF943561D191; // 0x0000(0x0001) Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor
+		unsigned char                                              HipStashSocket_11_2893BE234613BF11CA9E87BDEC3F8FBC;      // 0x0001(0x0001) Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor
+	};
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif

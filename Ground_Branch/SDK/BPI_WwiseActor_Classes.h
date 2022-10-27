@@ -1,0 +1,33 @@
+﻿#pragma once
+
+/**
+ * Name: Ground_Branch
+ * Version: 1032
+ */
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x01)
+#endif
+
+namespace CG
+{
+	// --------------------------------------------------
+	// # Classes
+	// --------------------------------------------------
+	/**
+	 * BlueprintGeneratedClass BPI_WwiseActor.BPI_WwiseActor_C
+	 * Size -> 0x0000 (FullSize[0x0028] - InheritedSize[0x0028])
+	 */
+	class UBPI_WwiseActor_C : public UInterface
+	{
+	public:
+		void BanksUnloaded();
+		void BanksLoaded();
+		static UClass* StaticClass();
+	};
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif

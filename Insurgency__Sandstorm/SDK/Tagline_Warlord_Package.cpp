@@ -1,0 +1,77 @@
+﻿/**
+ * Name: Insurgency__Sandstorm
+ * Version: 8846794
+ */
+
+#include "../SDK.h"
+
+namespace CG
+{
+	// --------------------------------------------------
+	// # Structs Functions
+	// --------------------------------------------------
+	/**
+	 * Function:
+	 * 		RVA    -> 0x05011060
+	 * 		Name   -> Function Tagline_Warlord.Tagline_Warlord_C.CheckLastOneStanded
+	 * 		Flags  -> (Native, Public, BlueprintCallable)
+	 * Parameters:
+	 * 		unsigned char                                      bpp__WinningTeam__pf                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	 */
+	void UTagline_Warlord_C::CheckLastOneStanded(unsigned char bpp__WinningTeam__pf)
+	{
+		static UFunction* fn = nullptr;
+		if (!fn)
+			fn = UObject::FindObject<UFunction>("Function Tagline_Warlord.Tagline_Warlord_C.CheckLastOneStanded");
+		
+		UTagline_Warlord_C_CheckLastOneStanded_Params params {};
+		params.bpp__WinningTeam__pf = bpp__WinningTeam__pf;
+		
+		auto flags = fn->FunctionFlags;
+		fn->FunctionFlags |= 0x00000400;
+		UObject::ProcessEvent(fn, &params);
+		fn->FunctionFlags = flags;
+	}
+
+	/**
+	 * Function:
+	 * 		RVA    -> 0x05000ED0
+	 * 		Name   -> Function Tagline_Warlord.Tagline_Warlord_C.BlueprintOnCheckRoundEndAward
+	 * 		Flags  -> (Native, Event, Public)
+	 * Parameters:
+	 * 		class AINSGameState*                               bpp__InGameState__pf                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	 * 		unsigned char                                      bpp__LastWinningTeam__pf__const                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	 */
+	void UTagline_Warlord_C::BlueprintOnCheckRoundEndAward(class AINSGameState* bpp__InGameState__pf, unsigned char bpp__LastWinningTeam__pf__const)
+	{
+		static UFunction* fn = nullptr;
+		if (!fn)
+			fn = UObject::FindObject<UFunction>("Function Tagline_Warlord.Tagline_Warlord_C.BlueprintOnCheckRoundEndAward");
+		
+		UTagline_Warlord_C_BlueprintOnCheckRoundEndAward_Params params {};
+		params.bpp__InGameState__pf = bpp__InGameState__pf;
+		params.bpp__LastWinningTeam__pf__const = bpp__LastWinningTeam__pf__const;
+		
+		auto flags = fn->FunctionFlags;
+		fn->FunctionFlags |= 0x00000400;
+		UObject::ProcessEvent(fn, &params);
+		fn->FunctionFlags = flags;
+	}
+
+	/**
+	 * Function:
+	 * 		RVA    -> 0x00000000
+	 * 		Name   -> PredefinedFunction UTagline_Warlord_C.StaticClass
+	 * 		Flags  -> (Predefined, Static)
+	 */
+	UClass* UTagline_Warlord_C::StaticClass()
+	{
+		static UClass* ptr = nullptr;
+		if (!ptr)
+			ptr = UObject::FindClass("DynamicClass Tagline_Warlord.Tagline_Warlord_C");
+		return ptr;
+	}
+
+}
+
+

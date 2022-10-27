@@ -1,0 +1,126 @@
+﻿/**
+ * Name: Borderlands_3
+ * Version: 4.20.3
+ */
+
+#include "../SDK.h"
+
+namespace CG
+{
+	// --------------------------------------------------
+	// # Structs Functions
+	// --------------------------------------------------
+	/**
+	 * Function:
+	 * 		RVA    -> 0x0178F8F0
+	 * 		Name   -> Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.SetBinds
+	 * 		Flags  -> (Public, BlueprintCallable, BlueprintEvent, Const)
+	 */
+	void UChallenge_WeaponDamageDelay_C::SetBinds()
+	{
+		static UFunction* fn = nullptr;
+		if (!fn)
+			fn = UObject::FindObject<UFunction>("Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.SetBinds");
+		
+		UChallenge_WeaponDamageDelay_C_SetBinds_Params params {};
+		
+		auto flags = fn->FunctionFlags;
+		UObject::ProcessEvent(fn, &params);
+		fn->FunctionFlags = flags;
+	}
+
+	/**
+	 * Function:
+	 * 		RVA    -> 0x0178F8F0
+	 * 		Name   -> Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.OnInitChallengeInstance
+	 * 		Flags  -> (Event, Public, BlueprintCallable, BlueprintEvent, Const)
+	 * Parameters:
+	 * 		class UChallengesComponent*                        OwningChallenges                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 * 		class AGbxCharacter*                               AssociatedCharacter                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 */
+	void UChallenge_WeaponDamageDelay_C::OnInitChallengeInstance(class UChallengesComponent* OwningChallenges, class AGbxCharacter* AssociatedCharacter)
+	{
+		static UFunction* fn = nullptr;
+		if (!fn)
+			fn = UObject::FindObject<UFunction>("Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.OnInitChallengeInstance");
+		
+		UChallenge_WeaponDamageDelay_C_OnInitChallengeInstance_Params params {};
+		params.OwningChallenges = OwningChallenges;
+		params.AssociatedCharacter = AssociatedCharacter;
+		
+		auto flags = fn->FunctionFlags;
+		UObject::ProcessEvent(fn, &params);
+		fn->FunctionFlags = flags;
+	}
+
+	/**
+	 * Function:
+	 * 		RVA    -> 0x0178F8F0
+	 * 		Name   -> Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.CheckDamageDealt
+	 * 		Flags  -> (BlueprintCallable, BlueprintEvent)
+	 * Parameters:
+	 * 		class AActor*                                      DamageInstigator                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 * 		float                                              Damage                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 * 		class UGbxDamageType*                              DamageType                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 * 		class UDamageSource*                               DamageSource                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 * 		class AActor*                                      DamagedActor                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 * 		struct FCausedDamageDetails                        Details                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference)
+	 */
+	void UChallenge_WeaponDamageDelay_C::CheckDamageDealt(class AActor* DamageInstigator, float Damage, class UGbxDamageType* DamageType, class UDamageSource* DamageSource, class AActor* DamagedActor, const struct FCausedDamageDetails& Details)
+	{
+		static UFunction* fn = nullptr;
+		if (!fn)
+			fn = UObject::FindObject<UFunction>("Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.CheckDamageDealt");
+		
+		UChallenge_WeaponDamageDelay_C_CheckDamageDealt_Params params {};
+		params.DamageInstigator = DamageInstigator;
+		params.Damage = Damage;
+		params.DamageType = DamageType;
+		params.DamageSource = DamageSource;
+		params.DamagedActor = DamagedActor;
+		params.Details = Details;
+		
+		auto flags = fn->FunctionFlags;
+		UObject::ProcessEvent(fn, &params);
+		fn->FunctionFlags = flags;
+	}
+
+	/**
+	 * Function:
+	 * 		RVA    -> 0x0178F8F0
+	 * 		Name   -> Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.ExecuteUbergraph_Challenge_WeaponDamageDelay
+	 * 		Flags  -> (HasDefaults)
+	 * Parameters:
+	 * 		int32_t                                            EntryPoint                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	 */
+	void UChallenge_WeaponDamageDelay_C::ExecuteUbergraph_Challenge_WeaponDamageDelay(int32_t EntryPoint)
+	{
+		static UFunction* fn = nullptr;
+		if (!fn)
+			fn = UObject::FindObject<UFunction>("Function Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C.ExecuteUbergraph_Challenge_WeaponDamageDelay");
+		
+		UChallenge_WeaponDamageDelay_C_ExecuteUbergraph_Challenge_WeaponDamageDelay_Params params {};
+		params.EntryPoint = EntryPoint;
+		
+		auto flags = fn->FunctionFlags;
+		UObject::ProcessEvent(fn, &params);
+		fn->FunctionFlags = flags;
+	}
+
+	/**
+	 * Function:
+	 * 		RVA    -> 0x00000000
+	 * 		Name   -> PredefinedFunction UChallenge_WeaponDamageDelay_C.StaticClass
+	 * 		Flags  -> (Predefined, Static)
+	 */
+	UClass* UChallenge_WeaponDamageDelay_C::StaticClass()
+	{
+		static UClass* ptr = nullptr;
+		if (!ptr)
+			ptr = UObject::FindClass("BlueprintGeneratedClass Challenge_WeaponDamageDelay.Challenge_WeaponDamageDelay_C");
+		return ptr;
+	}
+
+}
+
+
