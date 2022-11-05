@@ -49,7 +49,7 @@ Error: 'RowMap' : undeclared identifier
 Solution: `Engine_Classes.h`
 - Comment out the function template included
 
-Error: syntac errpr : 'constant' (HttpLibrary_Struct.h : Enum Class {4} DELETE)
+Error: syntax error : 'constant' (HttpLibrary_Struct.h : Enum Class {4} DELETE)
 Solution: Rename `DELETE` to `DELETE_A`
 ---
 
