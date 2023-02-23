@@ -1,0 +1,44 @@
+{
+  "engine_version": "4.24",
+  "base_config": "ConfigBase",
+  "game_name": "",
+  "game_ver": "",
+  "structs": [
+    {
+      "name": "UStruct",
+      "super": [ "UField", "FStructBaseChain" ],
+      "vars": [
+        { "SuperField": "UStruct*" },
+        { "Children": "UField*" },
+        { "PropertySize": "int32" },
+        { "MinAlignment": "int32" },
+        { "Script": "TArray<uint8_t>" },
+        { "PropertyLink": "UProperty*" },
+        { "RefLink": "UProperty*" },
+        { "DestructorLink": "UProperty*" },
+        { "PostConstructLink": "UProperty*" },
+        { "ScriptObjectReferences": "TArray<UObject*>" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UProperty",
+      "super": [ "UField" ],
+      "vars": [
+        { "ArrayDim": "int32" },
+        { "ElementSize": "int32" },
+        { "PropertyFlags": "int64" },
+        { "RepIndex": "uint16" },
+        { "BlueprintReplicationCondition": "uint8" },
+        { "pad": "uint8" },
+        { "Offset": "int32" },
+        { "RepNotifyFunc": "FName" },
+        { "PropertyLinkNext": "UProperty*" },
+        { "NextRef": "UProperty*" },
+        { "DestructorLinkNext": "UProperty*" },
+        { "PostConstructLinkNext": "UProperty*" }
+      ],
+      "note": ""
+    }
+  ]
+}

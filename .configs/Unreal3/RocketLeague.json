@@ -1,0 +1,71 @@
+{
+    "engine_version": "3.0.0",
+    "base_config": "ConfigBase",
+    "game_name": "RocketLeague",
+    "game_ver": "1.0.10897",
+    "structs": [
+        {
+            "name": "UField",
+            "super": [ "UObject" ],
+            "vars": [
+                { "Next": "UField*" },
+                { "pad": "void*" }
+            ],
+            "note": ""
+        },
+        {
+            "name": "UStruct",
+            "super": [ "UField" ],
+            "vars": [
+                { "pad": "void*" },
+                { "pad": "void*" },
+                { "SuperField": "UField*" },
+                { "Children": "UField*" },
+                { "PropertySize": "int" },
+                { "pad": "0x20" }
+            ],
+            "note": ""
+        },
+        {
+            "name": "UProperty",
+            "super": [ "UField" ],
+            "vars": [
+                { "ArrayDim": "int" },
+                { "ElementSize": "int" },
+                { "PropertyFlags": "FQWord" },
+                { "PropertySize": "int" },
+                { "RepIndex": "uint16" },
+                { "BlueprintReplicationCondition": "uint8" },
+                { "pad": "uint8" },
+                { "pad": "0x10" },
+                { "Offset": "int" },
+                { "pad": "int" },
+                { "PropertyLinkNext": "UProperty*" },
+                { "DestructorLinkNext": "UProperty*" },
+                { "NextRef": "UProperty*" },
+                { "RepNotifyFunc": "FString" }
+            ],
+            "note": "'RepNotifyFunc' i don't know it's correct name or not but it's FString"
+        },
+        {
+            "name": "UFunction",
+            "super": [ "UStruct" ],
+            "vars": [
+                { "FunctionFlags": "int32" },
+                { "RepOffset": "int16" },
+                { "NumParms": "int8" },
+                { "pad": "0x01" },
+                { "ParmsSize": "int16" },
+                { "ReturnValueOffset": "uint16" },
+                { "RPCId": "uint16" },
+                { "RPCResponseId": "uint16" },
+                { "FirstPropertyToInit": "UProperty*" },
+                { "EventGraphFunction": "UFunction*" },
+                { "EventGraphCallOffset": "int32" },
+                { "pad": "0x04" },
+                { "Func": "void*" }
+            ],
+            "note": ""
+        }
+    ]
+}
