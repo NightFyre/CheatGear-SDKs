@@ -1,0 +1,40 @@
+{
+    "engine_version": "3.0.0",
+    "base_config": "ConfigBase",
+    "game_name": "",
+    "game_ver": "",
+    "structs": [
+        {
+            "name": "UObject",
+            "super": [],
+            "vars": [
+                { "VfTable": "void*" },
+                { "InternalIndex": "int32" },
+                { "HashNext": "void*" },
+                { "ObjectFlags": "FQWord" },
+                { "HashOuterNext": "void*" },
+                { "StateFrame": "void*" },
+                { "Linker": "UObject*" },
+                { "LinkerIndex": "void*" },
+                { "NetIndex": "int32" },
+                { "Outer": "UObject*" },
+                { "Name": "FName" },
+                { "Class": "UClass*" },
+                { "ObjectArchetype": "UObject*" }
+            ],
+            "note": ""
+        },
+        {
+            "name": "UStruct",
+            "super": [ "UField" ],
+            "vars": [
+                { "pad": "0x8" },
+                { "SuperField": "UField*" },
+                { "PropertySize": "int32" },
+                { "Children": "UField*" },
+                { "pad": "0x3A" }
+            ],
+            "note": ""
+        }
+    ]
+}

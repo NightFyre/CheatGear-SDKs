@@ -1,0 +1,726 @@
+{
+  "engine_version": "5.0",
+  "base_config": "",
+  "game_name": "",
+  "game_ver": "",
+  "structs": [
+    {
+      "name": "FPointer",
+      "super": [],
+      "vars": [
+        { "Pointer": "void*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "TMap",
+      "super": [],
+      "vars": [
+        { "pad": "0x50" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FNameEntryId",
+      "super": [],
+      "vars": [
+        { "Value": "uint32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FNameEntry",
+      "super": [],
+      "vars": [
+        { "HashNext": "FNameEntry*" },
+        { "Index": "int32" },
+        { "NameStr": "string" }
+      ],
+      "note": "changes on that struct will not case any changes"
+    },
+    {
+      "name": "FNameEntryAllocator",
+      "super": [],
+      "vars": [
+        { "FrwLock": "uint64" },
+        { "CurrentBlock": "int32" },
+        { "CurrentByteCursor": "int32" },
+        { "Blocks": "void*" }
+      ],
+      "note": "That's for GNames"
+    },
+    {
+      "name": "FNamePool",
+      "super": [],
+      "vars": [
+        { "Allocator": "FNameEntryAllocator" }
+      ],
+      "note": "That's for GNames"
+    },
+    {
+      "name": "FName",
+      "super": [],
+      "vars": [
+        { "Index": "int32" },
+        { "Number": "int32" }
+      ],
+      "note": "That's for GObjects, changes on that struct will not case any changes"
+    },
+    {
+      "name": "FQWord",
+      "super": [],
+      "vars": [
+        { "A": "int32" },
+        { "B": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FUEnumItem",
+      "super": [],
+      "vars": [
+        { "Key": "FName" },
+        { "Value": "int64" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FUObjectItem",
+      "super": [],
+      "vars": [
+        { "Object": "UObject*" },
+        { "Flags": "int32" },
+        { "ClusterIndex": "int32" },
+        { "SerialNumber": "int32" },
+        { "pad": "0x04" }
+      ],
+      "note": "for 32bit games maybe u need to remove `pad`"
+    },
+    {
+      "name": "TArray",
+      "super": [],
+      "vars": [
+        { "Data": "T*" },
+        { "Count": "int32" },
+        { "Max": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FString",
+      "super": [ "TArray" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FWeakObjectPtr",
+      "super": [],
+      "vars": [
+        { "ObjectIndex": "int32" },
+        { "ObjectSerialNumber": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FScriptInterface",
+      "super": [],
+      "vars": [
+        { "ObjectPointer": "UObject*" },
+        { "InterfacePointer": "void*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FGuid",
+      "super": [],
+      "vars": [
+        { "A": "int32" },
+        { "B": "int32" },
+        { "C": "int32" },
+        { "D": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FText",
+      "super": [],
+      "vars": [
+        { "pad": "0x18" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FScriptDelegate",
+      "super": [],
+      "vars": [
+        { "pad": "0x10" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FScriptMulticastDelegate",
+      "super": [],
+      "vars": [
+        { "pad": "0x10" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FMulticastSparseDelegate",
+      "super": [],
+      "vars": [
+        { "pad": "0x01" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FUniqueObjectGuid",
+      "super": [],
+      "vars": [
+        { "Guid": "FGuid" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "TPersistentObjectPtr",
+      "super": [],
+      "vars": [
+        { "WeakPtr": "FWeakObjectPtr" },
+        { "TagAtLastTest": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FLazyObjectPtr",
+      "super": [ "TPersistentObjectPtr" ],
+      "vars": [
+        { "TPersistentObjectPtr_T_Type": "FUniqueObjectGuid" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FStringAssetReference",
+      "super": [],
+      "vars": [
+        { "AssetLongPathname": "FString" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FAssetPtr",
+      "super": [ "TPersistentObjectPtr" ],
+      "vars": [
+        { "ObjectId": "FStringAssetReference" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FStructBaseChain",
+      "super": [],
+      "vars": [
+        { "StructBaseChainArray": "FStructBaseChain**" },
+        { "NumStructBasesInChainMinusOne": "int32" },
+        { "pad": "0x04" }
+      ],
+      "note": "for 32bit games maybe u need to remove `pad`"
+    },
+    {
+      "name": "FClass",
+      "super": [],
+      "vars": [
+        { "Name": "FName" },
+        { "Id": "uint64" },
+        { "CastFlags": "uint64" },
+        { "ClassFlags": "uint32" },
+        { "pad": "0x04" },
+        { "SuperClass": "FClass*" },
+        { "DefaultObject": "FField*" },
+        { "ConstructFn": "FField*" },
+        { "Counter": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FFieldVariant",
+      "super": [],
+      "vars": [
+        { "Container": "Union(FField|UObject)*" },
+        { "IsUObject": "bool" },
+        { "pad": "0x07" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FField",
+      "super": [],
+      "vars": [
+        { "VfTable": "void*" },
+        { "Class": "FClass*" },
+        { "Owner": "FFieldVariant" },
+        { "Next": "FField*" },
+        { "Name": "FName" },
+        { "Flags": "int32" },
+        { "pad": "0x04" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FProperty",
+      "super": [ "FField" ],
+      "vars": [
+        { "ArrayDim": "int32" },
+        { "ElementSize": "int32" },
+        { "PropertyFlags": "int64" },
+        { "RepIndex": "uint16" },
+        { "BlueprintReplicationCondition": "uint8" },
+        { "pad": "uint8" },
+        { "Offset": "int32" },
+        { "RepNotifyFunc": "FName" },
+        { "PropertyLinkNext": "FProperty*" },
+        { "NextRef": "FProperty*" },
+        { "DestructorLinkNext": "FProperty*" },
+        { "PostConstructLinkNext": "FProperty*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FByteProperty",
+      "super": [ "FNumericProperty" ],
+      "vars": [
+        { "Enum": "UEnum*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FBoolProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "FieldSize": "uint8" },
+        { "ByteOffset": "uint8" },
+        { "ByteMask": "uint8" },
+        { "FieldMask": "uint8" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FInterfaceProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "InterfaceClass": "UClass*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FNameProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FTextProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FObjectPropertyBase",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "PropertyClass": "UClass*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FObjectProperty",
+      "super": [ "FObjectPropertyBase" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FComponentProperty",
+      "super": [ "FObjectProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FClassProperty",
+      "super": [ "FObjectProperty" ],
+      "vars": [
+        { "MetaClass": "UClass*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FWeakObjectProperty",
+      "super": [ "FObjectPropertyBase" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FLazyObjectProperty",
+      "super": [ "FObjectPropertyBase" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FStructProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "Struct": "UScriptStruct*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FStrProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FArrayProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "Inner": "FProperty*" },
+        { "ArrayFlags": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FMapProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "KeyProp": "FProperty*" },
+        { "ValueProp": "FProperty*" },
+        { "MapLayout": "24" },
+        { "MapFlags": "int32" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FDelegateProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "SignatureFunction": "UFunction*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FMulticastDelegateProperty",
+      "super": [ "FDelegateProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FMulticastSparseDelegateProperty",
+      "super": [ "FMulticastDelegateProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "FEnumProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+        { "UnderlyingProp": "FNumericProperty*" },
+        { "Enum": "UEnum*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "FNumericProperty",
+      "super": [ "FProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UObject",
+      "super": [],
+      "vars": [
+        { "VfTable": "void*" },
+        { "Flags": "int32" },
+        { "InternalIndex": "int32" },
+        { "Class": "UClass*" },
+        { "Name": "FName" },
+        { "Outer": "UObject*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UField",
+      "super": [ "UObject" ],
+      "vars": [
+        { "Next": "UField*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UEnum",
+      "super": [ "UField" ],
+      "vars": [
+        { "CppType": "FString" },
+        { "Names": "TArray" },
+        { "CppForm": "int64" },
+        { "EnumDisplayNameFn": "int" },
+        { "pad": "0x4" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UProperty",
+      "super": [ "UField" ],
+      "vars": [
+        { "ArrayDim": "int32" },
+        { "ElementSize": "int32" },
+        { "PropertyFlags": "int64" },
+        { "RepIndex": "uint16" },
+        { "BlueprintReplicationCondition": "uint8" },
+        { "pad": "uint8" },
+        { "Offset": "int32" },
+        { "RepNotifyFunc": "FName" },
+        { "PropertyLinkNext": "UProperty*" },
+        { "NextRef": "UProperty*" },
+        { "DestructorLinkNext": "UProperty*" },
+        { "PostConstructLinkNext": "UProperty*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UStruct",
+      "super": [ "UField", "FStructBaseChain" ],
+      "vars": [
+        { "SuperField": "UStruct*" },
+        { "Children": "UField*" },
+        { "ChildProperties": "FField*" },
+        { "PropertySize": "int32" },
+        { "MinAlignment": "int32" },
+        { "Script": "TArray<uint8_t>" },
+        { "PropertyLink": "FProperty*" },
+        { "RefLink": "FProperty*" },
+        { "DestructorLink": "FProperty*" },
+        { "PostConstructLink": "FProperty*" },
+        { "ScriptAndPropertyObjectReferences": "TArray<UObject*>" },
+        { "UnresolvedScriptProperties": "FUnresolvedScriptPropertiesArray*" },
+        { "UnversionedSchema": "FUnversionedStructSchema*" }
+      ],
+      "note": "`ChildProperties` used for `Members` instead of `Children`"
+    },
+    {
+      "name": "UScriptStruct",
+      "super": [ "UStruct" ],
+      "vars": [
+        { "StructFlags": "int32" },
+        { "PrepareCppStructOpsCompleted": "bool" },
+        { "CppStructOps": "ICppStructOps*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UFunction",
+      "super": [ "UStruct" ],
+      "vars": [
+        { "FunctionFlags": "int32" },
+        { "NumParms": "uint8" },
+        { "ParmsSize": "uint16" },
+        { "pad": "0x01" },
+        { "ReturnValueOffset": "uint16" },
+        { "RPCId": "uint16" },
+        { "RPCResponseId": "uint16" },
+        { "pad": "0x02" },
+        { "FirstPropertyToInit": "UProperty*" },
+        { "EventGraphFunction": "UFunction*" },
+        { "EventGraphCallOffset": "int32" },
+        { "pad": "0x04" },
+        { "Func": "void*" }
+      ],
+      "note": "Looks like it's RepOffset removed but it's okay. we need FunctionFlags only"
+    },
+    {
+      "name": "UClass",
+      "super": [ "UStruct" ],
+      "vars": [
+      ],
+      "note": "Size will be 0xF8 but CheatGear not need it"
+    },
+    {
+      "name": "UNumericProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UByteProperty",
+      "super": [ "UNumericProperty" ],
+      "vars": [
+        { "Enum": "UEnum*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UBoolProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "FieldSize": "uint8" },
+        { "ByteOffset": "uint8" },
+        { "ByteMask": "uint8" },
+        { "FieldMask": "uint8" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UNameProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UTextProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UObjectPropertyBase",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "PropertyClass": "UClass*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UObjectProperty",
+      "super": [ "UObjectPropertyBase" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UComponentProperty",
+      "super": [ "UObjectProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UClassProperty",
+      "super": [ "UObjectProperty" ],
+      "vars": [
+        { "MetaClass": "UClass*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UWeakObjectProperty",
+      "super": [ "UObjectPropertyBase" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "ULazyObjectProperty",
+      "super": [ "UObjectPropertyBase" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UInterfaceProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "InterfaceClass": "UClass*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UAssetObjectProperty",
+      "super": [ "UObjectPropertyBase" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UAssetClassProperty",
+      "super": [ "UAssetObjectProperty" ],
+      "vars": [
+        { "MetaClass": "UClass*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UStructProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "Struct": "UScriptStruct*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UStrProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UArrayProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "Inner": "UProperty*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UMapProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "KeyProp": "UProperty*" },
+        { "ValueProp": "UProperty*" },
+        { "MapLayout": "0x18" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UDelegateProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "SignatureFunction": "UFunction*" }
+      ],
+      "note": ""
+    },
+    {
+      "name": "UMulticastDelegateProperty",
+      "super": [ "UDelegateProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UMulticastSparseDelegateProperty",
+      "super": [ "UMulticastDelegateProperty" ],
+      "vars": [
+      ],
+      "note": ""
+    },
+    {
+      "name": "UEnumProperty",
+      "super": [ "UProperty" ],
+      "vars": [
+        { "UnderlyingProp": "UNumericProperty*" },
+        { "Enum": "UEnum*" }
+      ],
+      "note": ""
+    }
+  ]
+}

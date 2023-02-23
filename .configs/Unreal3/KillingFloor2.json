@@ -1,0 +1,22 @@
+{
+  "engine_version": "3.0.0",
+  "base_config": "ConfigBase",
+  "game_name": "KillingFloor2",
+  "game_ver": "v1117",
+  "structs": [
+    {
+      "name": "UStruct",
+      "super": [ "UField" ],
+      "vars": [
+        { "pad": "0x8" },
+        { "pad": "0x8" },
+        { "SuperField": "UField*" },
+        { "Children": "UField*" },
+        { "PropertySize": "int32" },
+        { "pad": "0x04" },
+        { "pad": "0x40" }
+      ],
+      "note": ""
+    }
+  ]
+}
